@@ -167,10 +167,10 @@ if __name__ == '__main__':
     total_losses = losses_features.shape[0]
 
     train_dataloader = DataLoader(
-        RandomPairDataset(dataset_size, wins_features[:-20000], losses_features[:-20000]), batch_size=batch_size, shuffle=True)
+        RandomPairDataset(dataset_size, wins_features[:-1000], losses_features[:-1000]), batch_size=batch_size, shuffle=True)
 
     test_dataloader = DataLoader(RandomPairDataset(
-        dataset_size, wins_features[-20000:], losses_features[-20000:]), batch_size=batch_size, shuffle=True)
+        dataset_size, wins_features[-1000:], losses_features[-1000:]), batch_size=batch_size, shuffle=True)
 
     start = time()
 
